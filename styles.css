@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #3e7cb1;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.input-container input,
+.input-container select,
+.input-container button {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 200px;
+}
+
+button {
+  background-color: #3e7cb1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #305a84;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.low-priority {
+  background-color: #e0f7fa;
+}
+
+.medium-priority {
+  background-color: #fff9c4;
+}
+
+.high-priority {
+  background-color: #ffccbc;
+}
+
+button.edit {
+  background-color: #ffcc00;
+}
+
+button.delete {
+  background-color: #e74c3c;
+}
+
+button.complete {
+  background-color: #28a745;
+}
+
+button:hover.complete {
+  background-color: #218838;
+}
+select {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 120px; /* You can adjust this based on preference */
+}
+/* Progress bar styling */
+.progress-container {
+  margin: 20px 0;
+}
+
+#progress-bar {
+  width: 100%;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 20px;
+}
+
+#progress {
+  height: 100%;
+  background-color: #3e7cb1;
+  width: 0%;
+  border-radius: 5px;
+}
+
+/* Import/Export button container */
+.import-export-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+#import-button, #export-button, .import-button {
+  background-color: #3e7cb1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#import-button:hover, #export-button:hover, .import-button:hover {
+  background-color: #305a84;
+}
