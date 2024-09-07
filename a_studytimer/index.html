@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timer Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="timerLabel">Study Time: 30:00</h1>
+        
+        <div class="button-group">
+            <button id="pauseButton" onclick="togglePause()">Resume</button>
+            <button onclick="switchMode()">Switch Mode</button>
+            <button onclick="resetTimer()">Reset</button>
+            <button onclick="setInitialTimes()">Set Times</button> <!-- Trigger for setting times -->
+        </div>
+        
+        <div class="increment-controls">
+            <label for="studyIncrement">Study Increment (minutes):</label>
+            <input type="number" id="studyIncrement" value="10">  <!-- Study increment in minutes -->
+            <label for="breakIncrement">Break Increment (seconds):</label>
+            <input type="number" id="breakIncrement" value="180">  <!-- Break increment in seconds -->
+        </div>        
+        
+        <div class="background-controls">
+            <!-- <button onclick="document.getElementById('backgroundUploader').click()">Upload Background</button> -->
+            <!-- <input type="file" id="backgroundUploader" style="display:none;" accept="image/*" onchange="uploadBackground()"> -->
+            <button onclick="openBackgroundLibrary()">Background Library</button>
+            <!-- <button onclick="setPresetBackground()">Set Muslim Moon Background</button> -->
+        </div>
+        
+        <div id="backgroundLibrary" style="display:none;">
+            <input type="color" id="color1" value="#ffffff">
+            <input type="color" id="color2" value="#000000">
+            <button onclick="applyGradient()">Apply Gradient</button>
+        </div>
+    </div>
+    
+    <!-- Ensure the script loads after the HTML elements are loaded -->
+    <script src="script.js"></script>
+</body>
+</html>
