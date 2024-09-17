@@ -1,56 +1,101 @@
+<!-- 
+BBBBBBBBB     Y       Y        A         L         I     H       H
+BB      BB     Y     Y        A A        L         I     H       H
+BB      BB      Y   Y        A   A       L         I     H       H
+BB      BB       Y Y        AAAAAAA      L         I     HHHHHHHHH
+BBBBBBBBB         Y        A       A     L         I     H       H
+BB      BB        Y       A         A    L         I     H       H
+BB      BB        Y      A           A   L         I     H       H
+BBBBBBBBB         Y     A             A  LLLLLLL   I     H       H
+ -->
+<!-- 
+ By Ali Hussein 
+Do not steal code
+  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List with Gradient Controls</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>To-Do List By Ali Hussein 20018135</h1>
+    <!-- Button to show/hide gradient controls -->
+    <button id="toggleGradientButton" onclick="toggleGradientControls()">Customize Background</button>
 
-  <!-- Input to add a new task -->
-  <div class="input-container">
-    <input type="text" id="new-task" placeholder="Enter a new task">
-    <input type="datetime-local" id="due-date-time" placeholder="Due date and time">
-    <select id="priority">
-      <option value="low">Low Priority</option>
-      <option value="medium">Medium Priority</option>
-      <option value="high">High Priority</option>
-    </select>
-    <input type="text" id="category" placeholder="Enter category (e.g., Work, Personal)">
-    <select id="recurring">
-      <option value="none">No Recurrence</option>
-      <option value="daily">Daily</option>
-      <option value="weekly">Weekly</option>
-      <option value="monthly">Monthly</option>
-    </select>
-    <button id="add-button">Add Task</button>
-  </div>
-
-  <!-- Progress Bar -->
-  <div class="progress-container">
-    <h3>Progress:</h3>
-    <div id="progress-bar">
-      <div id="progress"></div>
+    <!-- Hidden gradient controls initially -->
+    <div id="gradientControls" style="display:none;">
+        <label>Choose Color 1:</label>
+        <input type="color" id="color1" value="#ff0000"> <!-- Default value set to red -->
+        <label>Choose Color 2:</label>
+        <input type="color" id="color2" value="#0000ff"> <!-- Default value set to blue -->
+        <button onclick="applyGradient()">Apply Gradient</button>
     </div>
-  </div>
 
-  <!-- Incomplete Tasks -->
-  <h2>Tasks To Do</h2>
-  <ul id="incomplete-task-list"></ul>
+    <!-- Main content for the to-do list -->
+     <!-- Button to show/hide gradient controls -->
+<button id="toggleGradientButton" onclick="toggleGradientControls()">Customize Background</button>
 
-  <!-- Completed Tasks -->
-  <h2>Completed Tasks</h2>
-  <ul id="completed-task-list"></ul>
+<!-- Hidden gradient controls initially -->
+<div id="gradientControls" style="display:none;">
+    <label>Choose Color 1:</label>
+    <input type="color" id="color1" value="#ff0000"> <!-- Default value set to red -->
+    <label>Choose Color 2:</label>
+    <input type="color" id="color2" value="#0000ff"> <!-- Default value set to blue -->
+    <button onclick="applyGradient()">Apply Gradient</button>
+</div>
 
-  <!-- Export and Import Buttons -->
-  <div class="import-export-container">
-    <button id="export-button">Download Tasks</button>
-    <input type="file" id="import-file" style="display:none">
-    <label for="import-file" class="import-button">Import Tasks</label>
-  </div>
+    <div class="main-content">
+        <h1>To-Do List</h1>
 
-  <script src="script.js"></script>
+        <!-- Input to add a new task -->
+        <div class="input-container">
+            <input type="text" id="new-task" placeholder="Enter a new task">
+            <input type="datetime-local" id="due-date-time">
+            <select id="priority">
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <input type="text" id="category" placeholder="Enter category (e.g., Work, Personal)">
+            <select id="recurring">
+                <option value="none">No Recurrence</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+            <button id="add-button">Add Task</button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <h3>Progress:</h3>
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+        <!-- Incomplete Tasks -->
+        <h2>Tasks To Do</h2>
+        <ul id="incomplete-task-list"></ul>
+
+        <!-- Completed Tasks -->
+        <h2>Completed Tasks</h2>
+        <ul id="completed-task-list"></ul>
+
+        <!-- Export and Import Buttons -->
+        <div class="import-export-container">
+            <button id="export-button">Download Tasks</button>
+            <input type="file" id="import-file" style="display:none">
+            <label for="import-file" class="import-button">Import Tasks</label>
+        </div>
+    </div> <!-- End of main content wrapper -->
+
+    <!-- Sidebar for the study timer -->
+
+
+    <script src="script.js"></script>
 </body>
 </html>
