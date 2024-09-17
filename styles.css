@@ -1,139 +1,90 @@
+/* General layout */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  margin: 0;
-  padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Matches the main menu background */
+    height: 90vh; /* Full viewport height */
 }
 
-h1 {
-  text-align: center;
-  color: #3e7cb1;
+.main-menu {
+    background-color: #000000;
+    padding: 40px; /* Increased padding for more space */
+    color: white;
+    text-align: center;
+    height: 90vh; /* Ensures this section takes up the entire height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
 }
 
-.input-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+.main-menu h1 {
+    margin-bottom: 50px; /* Add space between heading and buttons */
+    
 }
 
-.input-container input,
-.input-container select,
-.input-container button {
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.main-menu button {
+    background-color: #0e0e0e;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Makes the button smaller */
+    margin: 10px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace; /* Ensures button font is consistent */
+    border-radius: 25px; /* Adds curvature to the buttons */
+    font-size: 16px; /* Smaller font size */
+    width: 500px; /* Makes the button smaller in width */
+    height: 50px;
+}
+.main-menu {
+    align-items: center; /* Centers buttons horizontally */
+}
+.main-menu button:hover {
+    background-color: #305a84;
 }
 
-input[type="text"],
-input[type="date"] {
-  width: 200px;
+/* Work and Study Section */
+.iframe-container {
+    display: flex;
+    height: 100vh;
 }
 
-button {
-  background-color: #3e7cb1;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* To-Do list iframe takes up 75% of the screen */
+.iframe-todo {
+    flex: 3;
+    border: none;
 }
 
-button:hover {
-  background-color: #305a84;
+/* Study Timer iframe takes up 25% */
+.iframe-study-timer {
+    flex: 1;
+    border: none;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+/* Sidebar specific styling (if needed) */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
 
-.task {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  margin: 5px 0;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Main content to shift for sidebar */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+/* Position the image in the top left corner */
+.top-left-image {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    width: 400px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1000; /* Make sure it stays on top */
 }
 
-.completed-task {
-  text-decoration: line-through;
-  color: #999;
-}
-
-.low-priority {
-  background-color: #e0f7fa;
-}
-
-.medium-priority {
-  background-color: #fff9c4;
-}
-
-.high-priority {
-  background-color: #ffccbc;
-}
-
-button.edit {
-  background-color: #ffcc00;
-}
-
-button.delete {
-  background-color: #e74c3c;
-}
-
-button.complete {
-  background-color: #28a745;
-}
-
-button:hover.complete {
-  background-color: #218838;
-}
-select {
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 120px; /* You can adjust this based on preference */
-}
-/* Progress bar styling */
-.progress-container {
-  margin: 20px 0;
-}
-
-#progress-bar {
-  width: 100%;
-  background-color: #f4f4f4;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  height: 20px;
-}
-
-#progress {
-  height: 100%;
-  background-color: #3e7cb1;
-  width: 0%;
-  border-radius: 5px;
-}
-
-/* Import/Export button container */
-.import-export-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-}
-
-#import-button, #export-button, .import-button {
-  background-color: #3e7cb1;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-#import-button:hover, #export-button:hover, .import-button:hover {
-  background-color: #305a84;
-}
