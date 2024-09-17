@@ -1,90 +1,185 @@
-/* General layout */
 body {
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 0;
-    background-color: #000000; /* Matches the main menu background */
-    height: 90vh; /* Full viewport height */
+  display: flex;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents scrollbars on the body */
 }
 
-.main-menu {
-    background-color: #000000;
-    padding: 40px; /* Increased padding for more space */
-    color: white;
-    text-align: center;
-    height: 90vh; /* Ensures this section takes up the entire height of the viewport */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers the content vertically */
-}
-
-.main-menu h1 {
-    margin-bottom: 50px; /* Add space between heading and buttons */
-    
-}
-
-.main-menu button {
-    background-color: #0e0e0e;
-    color: white;
-    border: none;
-    padding: 10px 20px; /* Makes the button smaller */
-    margin: 10px;
-    cursor: pointer;
-    font-family: 'Courier New', Courier, monospace; /* Ensures button font is consistent */
-    border-radius: 25px; /* Adds curvature to the buttons */
-    font-size: 16px; /* Smaller font size */
-    width: 500px; /* Makes the button smaller in width */
-    height: 50px;
-}
-.main-menu {
-    align-items: center; /* Centers buttons horizontally */
-}
-.main-menu button:hover {
-    background-color: #305a84;
-}
-
-/* Work and Study Section */
-.iframe-container {
-    display: flex;
-    height: 100vh;
-}
-
-/* To-Do list iframe takes up 75% of the screen */
-.iframe-todo {
-    flex: 3;
-    border: none;
-}
-
-/* Study Timer iframe takes up 25% */
-.iframe-study-timer {
-    flex: 1;
-    border: none;
-}
-
-/* Sidebar specific styling (if needed) */
-.sidebar {
-    width: 250px;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    position: fixed;
-    height: 100vh;
-    top: 0;
-    left: 0;
-}
-
-/* Main content to shift for sidebar */
 .main-content {
-    margin-left: 250px;
-    padding: 20px;
-}
-/* Position the image in the top left corner */
-.top-left-image {
-    position: absolute;
-    top: 20px; /* Adjust as needed */
-    left: 20px; /* Adjust as needed */
-    width: 400px; /* Adjust size */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 1000; /* Make sure it stays on top */
+  flex-grow: 1; /* Takes up as much space as possible */
+  overflow-y: auto; /* Allows scrolling within the main content area */
+  padding: 20px;
 }
 
+.sidebar {
+  width: 300px; /* Adjust width as necessary */
+  background-color: #fff; /* Ensures the sidebar is visible */
+  border-left: 1px solid #ccc; /* Separates sidebar from content */
+  overflow-y: auto; /* Allows scrolling within the sidebar */
+}
+
+.sidebar iframe {
+  width: 100%;
+  height: 100%; /* Ensures the iframe takes full height of the sidebar */
+  border: none;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.input-container input, .input-container select, .input-container button {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"], input[type="datetime-local"] {
+  width: 200px;
+}
+
+button {
+  background-color: #3e7cb1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #305a84;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.low-priority, .medium-priority, .high-priority {
+  background-color: #e0f7fa; /* default for low priority */
+}
+
+.medium-priority {
+  background-color: #fff9c4;
+}
+
+.high-priority {
+  background-color: #ffccbc;
+}
+
+button.edit {
+  background-color: #ffcc00;
+}
+
+button.delete {
+  background-color: #e74c3c;
+}
+
+button.complete {
+  background-color: #28a745;
+}
+
+button:hover.complete {
+  background-color: #218838;
+}
+
+select {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 120px; /* You can adjust this based on preference */
+}
+
+.progress-container {
+  margin: 20px 0;
+}
+
+#progress-bar {
+  width: 100%;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 20px;
+}
+
+#progress {
+  height: 100%;
+  background-color: #3e7cb1;
+  width: 0%;
+  border-radius: 5px;
+}
+
+.import-export-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+#import-button, #export-button, .import-button {
+  background-color: #3e7cb1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#import-button:hover, #export-button:hover, .import-button:hover {
+  background-color: #305a84;
+}
+#toggleGradientButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggleGradientButton:hover {
+    background-color: #45a049;
+}
+
+#gradientControls {
+    position: absolute;
+    top: 50px; /* Adjust based on the size of your button */
+    left: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+#gradientControls label,
+#gradientControls input,
+#gradientControls button {
+    display: block;
+    margin: 5px 0;
+}
